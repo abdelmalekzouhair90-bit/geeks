@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volume of a Sphere</title>
+    <style>
+        body {
+            padding-top: 30px;
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        label, input {
+            display: block;
+            margin: 10px 0;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: 150px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        #volume {
+            background-color: #f0f8ff;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Calculate the Volume of a Sphere</h2>
+    <p>Enter the radius and click "Calculate" to get the volume.</p>
+
+    <form id="MyForm">
+        <label for="radius">Radius (r):</label>
+        <input type="text" name="radius" id="radius" required placeholder="Ex: 5">
+
+        <label for="volume">Volume (V = 4/3 × π × r³):</label>
+        <input type="text" name="volume" id="volume" readonly>
+
+        <input type="submit" value="Calculate" id="submit">
+    </form>
+
+    <div id="error" class="error"></div>
+
+    <script src="exercises_sphere.js"></script>
+
+</body>
+</html>

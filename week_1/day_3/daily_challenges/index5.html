@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Challenge: Mad Libs</title>
+  <link rel="stylesheet" href="styles.css" />
+ </head>
+ <style>
+      /* Task list container styling */
+    #libform {
+        padding: 0;
+        margin-top: 2px;
+        display: flex;
+        flex-direction: column;
+        /* The magic property: creates a 15px vertical gap between list items */
+        /* gap: 5px;  */
+    }
+
+    /* Individual task item styling */
+    #libform {
+        list-style: none; /* Removes default bullets */
+        padding: 5px;    /* Internal space for the text */
+        background-color: #f4f4f4;
+        border-left: 5px solid #2e4136; /* Aesthetic green left border */
+        border-radius: 1px;
+        font-family: Arial, sans-serif;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    }
+
+ </style>
+
+ <body>
+  
+
+    <h1>Mad Libs</h1>
+
+    <form id="libform">
+        <label for="noun">Noun:</label><input type="text" id="noun"><br>
+        <label for="adjective">Adjective:</label><input type="text" id="adjective"><br>
+        <!-- <button type="button">Click me</button><br> -->
+        <label for="person"> Someone's Name:</label><input type="text" id="person"><br>
+        <label for="verb">Verb:</label><input type="text" id="verb"><br>
+        <label for="place">A place:</label><input type="text" id="place"><br>
+        <button id="lib-button" type="button">Lib it!</button>
+    </form>
+
+    <p>Generated story: 
+    <span id="story"></span>
+    </p>
+
+    <script src="challenges.js"></script>
+
+ </body>
+</html>

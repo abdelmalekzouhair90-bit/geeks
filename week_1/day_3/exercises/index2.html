@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercice Formulaire + DOM</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; }
+    form { margin-bottom: 30px; }
+    label { display: inline-block; width: 100px; }
+    input[type="text"] { width: 250px; padding: 6px; }
+    .usersAnswer { list-style: none; padding: 0; }
+    .usersAnswer li { 
+      background: #f0f8ff; 
+      margin: 8px 0; 
+      padding: 10px; 
+      border-radius: 4px; 
+      border-left: 4px solid #4682b4; 
+    }
+  </style>
+</head>
+<body>
+
+  <form id="userForm">
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="firstname"><br><br>
+    
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lastname"><br><br>
+    
+    <input type="submit" value="Submit" id="submit">
+  </form>
+
+  <ul class="usersAnswer"></ul>
+
+  <script src="exercises_xp_gold.js"></script>
+</body>
+</html>
