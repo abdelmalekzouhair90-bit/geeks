@@ -161,8 +161,6 @@ function highlight() {
   });
 }
 
-
-// Fonction qui remet la couleur par défaut (noir)
 function returnItemsToDefault() {
   allBoldItems.forEach(item => {
     item.style.color = 'black';
