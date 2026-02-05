@@ -1,5 +1,7 @@
 // ====== Daily Challenge 1
+// script.js
 
+// 1. Sélection des éléments
 const form = document.getElementById('libform');
 const storySpan = document.getElementById('story');
 const libButton = document.getElementById('lib-button');
@@ -78,3 +80,6 @@ form.addEventListener('submit', function(e) {
   }
 });
 
+// ====== Daily Challenge 2
+
+// ====== Daily Challenge 3

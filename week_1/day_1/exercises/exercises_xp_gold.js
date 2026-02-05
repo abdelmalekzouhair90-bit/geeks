@@ -8,6 +8,9 @@ for (let i = 1; i <= 6; i++) {
     console.log(row);
 }
 
+
+
+
 // ===== Exercise 2
   
 
@@ -28,6 +31,9 @@ const text3 = "zouhair";
 console.log(`Is text1 blank? ${isBlank(text1)}`); // Output: true
 console.log(`Is text2 blank? ${isBlank(text2)}`); // Output: true
 console.log(`Is text3 blank? ${isBlank(text3)}`); // Output: false
+
+
+
 // ===== Exercise 3
 
 

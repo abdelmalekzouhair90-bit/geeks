@@ -1,4 +1,4 @@
-// ==== log it to the console= Exercise 1
+// // ==== Exercise 1
 
 const h1 = document.querySelector('h1');
 console.log('h1 element:', h1);
@@ -69,67 +69,142 @@ if (secondParagraph) {
 
 
 
-// Récupérer le formulaire et l'afficher dans la console
-const form = document.querySelector('form');
-console.log('Le formulaire :', form);
+
+// const form = document.querySelector('form');
+// console.log('Le formulaire :', form);
 
 
-const firstNameInput = document.getElementById('fname');
-const lastNameInput = document.getElementById('lname');
+// const firstNameInput = document.getElementById('fname');
+// const lastNameInput = document.getElementById('lname');
 
-console.log('Input prénom (par id) :', firstNameInput);
-console.log('Input nom (par id) :', lastNameInput);
+// console.log('Input prénom (par id) :', firstNameInput);
+// console.log('Input nom (par id) :', lastNameInput);
 
-const inputsByName = document.querySelectorAll('input[name]');
-console.log('Tous les inputs ayant un attribut name :', inputsByName);
+// const inputsByName = document.querySelectorAll('input[name]');
+// console.log('Tous les inputs ayant un attribut name :', inputsByName);
 
-// Ou plus précisément :
-const firstNameByName = document.querySelector('input[name="firstname"]');
-const lastNameByName = document.querySelector('input[name="lastname"]');
-console.log('Input firstname (par name) :', firstNameByName);
-console.log('Input lastname (par name) :', lastNameByName);
+// // Ou plus précisément :
+// const firstNameByName = document.querySelector('input[name="firstname"]');
+// const lastNameByName = document.querySelector('input[name="lastname"]');
+// console.log('Input firstname (par name) :', firstNameByName);
+// console.log('Input lastname (par name) :', lastNameByName);
 
 
-//  Écouter l'événement submit sur le formulaire
-form.addEventListener('submit', function(event) {
+// //  Écouter l'événement submit sur le formulaire
+// form.addEventListener('submit', function(event) {
   
-  // →→→→ Très important : empêcher le rechargement de la page
-  event.preventDefault();
+//   // →→→→ Très important : empêcher le rechargement de la page
+//   event.preventDefault();
 
-  const firstName = firstNameInput.value.trim();   // .trim() enlève les espaces inutiles
-  const lastName = lastNameInput.value.trim();
+//   const firstName = firstNameInput.value.trim();   // .trim() enlève les espaces inutiles
+//   const lastName = lastNameInput.value.trim();
 
   
  
-  if (firstName === '' || lastName === '') {
-    alert('Veuillez remplir les deux champs !');
-    return; // on arrête l'exécution
+//   if (firstName === '' || lastName === '') {
+//     alert('Veuillez remplir les deux champs !');
+//     return; 
+//   }
+
+  
+
+//   const liFirst = document.createElement('li');
+//   liFirst.textContent = firstName;
+
+//   const liLast = document.createElement('li');
+//   liLast.textContent = lastName;
+
+  
+
+//   const usersList = document.querySelector('.usersAnswer');
+//   usersList.appendChild(liFirst);
+//   usersList.appendChild(liLast);
+
+
+//   firstNameInput.value = '';
+//   lastNameInput.value = '';
+
+
+//   firstNameInput.focus();
+// });
+
+
+
+// // ===== Exercise 3
+
+
+
+let allBoldItems = [];
+
+
+
+function getBoldItems() {
+
+  const paragraph = document.getElementById('specialParagraph');
+  
+  if (!paragraph) {
+    console.error("Le paragraphe avec l'id 'specialParagraph' n'existe pas");
+    return;
   }
-
   
-  // Créer les éléments <li>
-  const liFirst = document.createElement('li');
-  liFirst.textContent = firstName;
-
-  const liLast = document.createElement('li');
-  liLast.textContent = lastName;
-
+  allBoldItems = paragraph.querySelectorAll('strong');
   
-  // Trouver la liste <ul> et y ajouter les <li>
-  const usersList = document.querySelector('.usersAnswer');
-  usersList.appendChild(liFirst);
-  usersList.appendChild(liLast);
+  console.log("Éléments en gras trouvés :", allBoldItems.length);
+}
 
+
+
+function highlight() {
+  allBoldItems.forEach(item => {
+    item.style.color = 'blue';
+
+  });
+}
+
+
+// Fonction qui remet la couleur par défaut (noir)
+function returnItemsToDefault() {
+  allBoldItems.forEach(item => {
+    item.style.color = 'black';
+
+  });
+}
+
+
+getBoldItems();
+
+const paragraph = document.getElementById('specialParagraph');
+
+if (paragraph) {
+  paragraph.addEventListener('mouseover', highlight);
+  paragraph.addEventListener('mouseout', returnItemsToDefault);
+} else {
+  console.error("Impossible d'ajouter les écouteurs : paragraphe introuvable");
+}
+
+// // ===== Exercise 4
+
+
+const form = document.getElementById('MyForm');
+const radiusInput = document.getElementById('radius');
+const volumeInput = document.getElementById('volume');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
   
-  // Optionnel : vider les champs après ajout
-  firstNameInput.value = '';
-  lastNameInput.value = '';
-
-
-  firstNameInput.focus();
+  const r = parseFloat(radiusInput.value.trim());
+  
+  if (isNaN(r) || r <= 0) {
+    volumeInput.value = '';
+    alert('Please enter a valid positive number for the radius');
+    return;
+  }
+  
+  const volume = (4 / 3) * Math.PI * Math.pow(r, 3);
+  volumeInput.value = volume.toFixed(2);
 });
-// ===== Exercise 3
 
-// ===== Exercise 4
-
-// ===== Exercise ...
+radiusInput.addEventListener('input', function() {
+  volumeInput.value = '';
+});
+// // ===== Exercise ...
