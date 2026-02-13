@@ -83,3 +83,13 @@ const residentLastNames = users
   .filter(user => user.role === 'Full Stack Resident')
   .map(user => user.lastName);
 console.log(residentLastNames);
+
+
+
+// ===== Exercise 5 
+
+const epic = ['a', 'long', 'time', 'ago', 'in a', 'galaxy', 'far far', 'away'];
+
+const epicString = epic.reduce((acc, word) => acc + ' ' + word);
+
+console.log(epicString);
