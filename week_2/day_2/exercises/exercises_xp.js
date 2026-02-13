@@ -1,9 +1,20 @@
 // ===== Exercise 1
+const colors = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
 
-// ===== Exercise 2
 
-// ===== Exercise 3
+colors.forEach((color, index) => {
+  console.log(`${index + 1}# choice is ${color}.`);
+});
 
-// ===== Exercise 4
 
-// ===== Exercise ...
+if (colors.includes("Violet")) {
+  console.log("Yeah");
+} else {
+  console.log("No...");
+}
+
+
+const hasViolet = colors.some(color => color === "Violet");
+
+console.log(hasViolet ? "Yeah" : "No...");
+
