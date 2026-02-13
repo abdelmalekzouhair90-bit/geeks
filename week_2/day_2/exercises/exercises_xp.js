@@ -37,3 +37,22 @@ colors.forEach((color, index) => {
 
   console.log(${position}${suffix} choice is ${color}.);
 });
+
+
+
+// ===== Exercise 3
+
+const fruits = ["apple", "orange"];
+const vegetables = ["carrot", "potato"];
+
+const result = ['bread', ...vegetables, 'chicken', ...fruits];
+console.log(result);
+
+
+const country = "USA";
+console.log([...country]);
+
+
+//  Bonus 
+let newArray = [...[,,]];
+console.log(newArray);
